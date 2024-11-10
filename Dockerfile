@@ -15,7 +15,7 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.tencent.com/g' /etc/apk/repositorie
 # 安装python3
 && apk add --update --no-cache python3 py3-pip \
 && rm -rf /var/cache/apk/*
-
+RUN pip install pymysql==1.0.2
 # 拷贝当前项目到/app目录下（.dockerignore中文件除外）
 COPY . /app
 
